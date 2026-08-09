@@ -34,6 +34,7 @@ Then hope the example code will not lag on cc1101 config or be stuck on rssi and
 Program gives you visual clues on LCD itself, you can enable debug in code to diagnose over serial. 
 - Firstly it configs cc1101 to raw ask capture, after everything is ok, it waits for signal
 - After one of VAG types is detected it tries to decode and then prints info about capture
+- Screens switch from main -> advanced 1 -> advanced 2 and back to main, main is default screen and has most important info
   
 This table explains different data:
 
