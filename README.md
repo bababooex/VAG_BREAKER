@@ -47,7 +47,8 @@ This table explains different data:
 | Advanced screen 2 | Full key1 and key2 data directly, for full debug via LCD |
 
 ### Navigation
-Default example uses 4 buttons
+Default example uses 4 buttons.
+
 This table explains their purpose, last three are just for that keyfob pressing feel:
 
 | Button name | Purpose and usage |
