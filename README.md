@@ -59,22 +59,11 @@ This table explains their purpose, last three are just for that keyfob pressing 
 
 ## **Images**
 
----
-
-## Showcase
-
 | | |
 |:---:|:---:|
-| ![Home](.arf_pictures/home.png) | ![Sub-GHz Scanner](.arf_pictures/subghz_scan.png) |
-| Home Screen | Sub-GHz Scanner |
-| ![Keeloq Key Manager](.arf_pictures/keeloq_key_manager.png) | ![Mod Hopping](.arf_pictures/mod_hopping.png) |
-| Keeloq Key Manager | Mod Hopping Config |
-| ![PSA Decrypt](.arf_pictures/psa_decrypt_builtin.png) | ![Counter BruteForce](.arf_pictures/counter_bruteforce.png) |
-| PSA XTEA Decrypt | Counter BruteForce |
-| ![Custom Emulation Settings](.arf_pictures/custom_emulation_settings.png) | ![Custom Emulation Scene](.arf_pictures/custom_emulation_scene.png) |
-| Custom Emulation Settings | Custom Emulation Scene |
+| ![capture](images/capture_mode.png) | ![decode](images/decoded!.png) |
+| Device in capture mode, rssi is broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
 
----
 ## **Crypto research**
 This explains more how does underlying logic work
 - **Lock It and Still Lose It — On the (In)Security of Automotive Remote Keyless Entry Systems**
