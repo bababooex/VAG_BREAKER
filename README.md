@@ -10,7 +10,7 @@ Experimental rewrite of already existing rolling code implementation on flipper 
 |  4   |   ✅    |   ✅   | AUT64       | Skoda octavia | 
 
 All use same 434.42 MHz. Examples are from my testing, can be wrong. 
-The x only means that it is encoding incorrectly, most Passats decode as type 1 but encode as type 2.
+The x only means that it is encoding incorrectly, most Passats decode as type 1 but encode as type 2, probably missing key for encode type 1.
 ## **How to put everything together?**
 
 ### Required hw for default example
@@ -26,7 +26,6 @@ The x only means that it is encoding incorrectly, most Passats decode as type 1 
 Then hope the example code will not lag on cc1101 config or be stuck on rssi and you are done!
 
 ## **Usage and navigation**
-
 
 ### Screen info 
 Program gives you visual clues on LCD itself, you can enable debug in code to diagnose over serial. 
@@ -44,44 +43,27 @@ Default example uses 4 buttons
 This table explains their purpose, last three are just for that keyfob pressing feel:
 | Button name | Purpose and usage |
 |---|---|
-| RST_BTN | Handles main navigation. If you capture correct data, 
-  you either switch 3 screens with short presses or one long press restarts capture  |
+| RST_BTN | Handles main navigation. Short press changes screen, long restarts capture  |
 | LOCK_BTN | Encodes lock button with next rolling code and counter |
 | UNLOCK_BTN | Encodes unlock button with next rolling code and counter |
 | TRUNK_BTN | Encodes boot button with next rolling code and counter |
 
 ## **Images**
 
+## **Crypto research**
+This explains more how does underlying logic work
+- **Lock It and Still Lose It — On the (In)Security of Automotive Remote Keyless Entry Systems**
+  Flavio D. Garcia, David Oswald, Timo Kasper, Pierre Pavlidès
+  *USENIX Security 2016, pp. 929–944*
+  DOI: [10.5555/3241094.3241166](https://doi.org/10.5555/3241094.3241166)
+  https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
+  
 ## **Credits**
+- Ported to arduino by me **@bababooex**
+- Additional help from AI, specifically DeepSeek
 ### **Inspiration and original implementations**
-- RocketGod
-- MMX
-- Leeroy
-- gullradriel
-- Skorp - Thanks, I sneaked a lot from Weather App!
-- Vadim's Radio Driver
+Originally developed by [ProtoPirate](https://protopirate.net/ProtoPirate/ProtoPirate) crew, for testing code I used [FlipperARF](https://github.com/D4C1-Labs/Flipper-ARF) with my flipper zero. But most of my rewrites are based on rust code from [KAT](https://github.com/KaraZajac/KAT), because it is closest to arduino and doesnt confuse me with dynamic allocation like flipper code.
+So thanks to
+- **KaraZajac** for her software
+- **Proto pirate** and **FlipperARF** guys for their work
 
-### **Protocol Magic**
-
-- L0rdDiakon
-- YougZ
-- RocketGod
-- MMX
-- DoobTheGoober
-- Skorp
-- Slackware
-- Trikk
-- Wootini
-- Li0ard
-- Leeroy
-- Ash
-
-### **Reverse Engineering Support**
-
-- DoobTheGoober
-- MMX
-- NeedNotApply
-- RocketGod
-- Slackware
-- Trikk
-- Li0ard
