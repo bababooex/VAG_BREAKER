@@ -61,7 +61,7 @@ This table explains their purpose, last three are just for that keyfob pressing 
 |     |     |
 |:---:|:---:|
 | ![capture](images/capture_mode.jpg) | ![decode](images/decoded!.jpg) |
-| Device in capture mode, rssi is broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
+| Device in capture mode, rssi is a bit broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
 
 ## **Crypto research**
 This explains more how does underlying logic work
@@ -71,7 +71,8 @@ This explains more how does underlying logic work
   DOI: [10.5555/3241094.3241166](https://doi.org/10.5555/3241094.3241166)
   https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
 ## **Libraries used**
-- 
+- Arduino [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal)
+- cc1101 library [CC1101-ESP-Arduino](https://github.com/wischbgr/CC1101-ESP-Arduino), because first tests done on pi pico so library stayed
 ## **Credits**
 - Ported to arduino by me **@bababooex**
 - Additional help from AI, specifically DeepSeek
