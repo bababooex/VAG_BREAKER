@@ -61,7 +61,7 @@ This table explains their purpose, last three are just for that keyfob pressing 
 
 | | |
 |:---:|:---:|
-| ![capture](images/capture_mode.png) | ![decode](images/decoded!.png) |
+| ![capture](images/capture_mode.jpg) | ![decode](images/decoded!.jpg) |
 | Device in capture mode, rssi is broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
 
 ## **Crypto research**
@@ -71,7 +71,8 @@ This explains more how does underlying logic work
   *USENIX Security 2016, pp. 929–944*
   DOI: [10.5555/3241094.3241166](https://doi.org/10.5555/3241094.3241166)
   https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf
-  
+## **Libraries used**
+- 
 ## **Credits**
 - Ported to arduino by me **@bababooex**
 - Additional help from AI, specifically DeepSeek
