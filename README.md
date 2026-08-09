@@ -1,8 +1,10 @@
 # **VAG_BREAKER**
 Experimental rewrite of already existing rolling code implementation on flipper zero. Developed as helpful tool to analyse and research rolling codes with cheap device like arduino, avoiding high cost of Flipperzero / HackRF, intended for educational and security purposes only. It doesnt allow user to transmit by default, this can be enabled in example code directly, preventing accidental desync or misuse right away. This was made to warn and teach about security vulnerabilities in my home country, where most popular car brand is Skoda!
 
+---
 > [!WARNING]
 > Although the name sounds ilegally, it means breaking rolling code, not into someones car. Also I have not tested encode on real car, but it is being decoded with flipper zero correctly with counter + 1. Test this only on systems and vehicles you own or have explicit, written permission to test. Capturing, decoding, or transmitting keyfob and vehicle-access signals without authorization may be illegal in your jurisdiction (e.g. computer misuse, unauthorized access, or radio regulations). You are solely responsible for ensuring your use complies with all applicable laws. The authors and contributors assume no liability for misuse or damage arising from use of this software.
+---
 
 ## **Supported VAG variants**
 | Type | Decoder | Encoder | Crypto used | Car examples  |
@@ -57,6 +59,22 @@ This table explains their purpose, last three are just for that keyfob pressing 
 
 ## **Images**
 
+---
+
+## Showcase
+
+| | |
+|:---:|:---:|
+| ![Home](.arf_pictures/home.png) | ![Sub-GHz Scanner](.arf_pictures/subghz_scan.png) |
+| Home Screen | Sub-GHz Scanner |
+| ![Keeloq Key Manager](.arf_pictures/keeloq_key_manager.png) | ![Mod Hopping](.arf_pictures/mod_hopping.png) |
+| Keeloq Key Manager | Mod Hopping Config |
+| ![PSA Decrypt](.arf_pictures/psa_decrypt_builtin.png) | ![Counter BruteForce](.arf_pictures/counter_bruteforce.png) |
+| PSA XTEA Decrypt | Counter BruteForce |
+| ![Custom Emulation Settings](.arf_pictures/custom_emulation_settings.png) | ![Custom Emulation Scene](.arf_pictures/custom_emulation_scene.png) |
+| Custom Emulation Settings | Custom Emulation Scene |
+
+---
 ## **Crypto research**
 This explains more how does underlying logic work
 - **Lock It and Still Lose It — On the (In)Security of Automotive Remote Keyless Entry Systems**
