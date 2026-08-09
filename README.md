@@ -34,7 +34,8 @@ Then hope the example code will not lag on cc1101 config or be stuck on rssi and
 Program gives you visual clues on LCD itself, you can enable debug in code to diagnose over serial. 
 - Firstly it configs cc1101 to raw ask capture, after everything is ok, it waits for signal
 - After one of VAG types is detected it tries to decode and then prints info about capture
-This table explains different data: 
+This table explains different data:
+
 | Screen type | Purpose and data meaning |
 |---|---|
 | Main screen | Shows decoded type name, button, counter and key used to decrypt, if vag type detected is 2, it shows X - no AUT64 keys used |
@@ -44,6 +45,7 @@ This table explains different data:
 ### Navigation
 Default example uses 4 buttons
 This table explains their purpose, last three are just for that keyfob pressing feel:
+
 | Button name | Purpose and usage |
 |---|---|
 | RST_BTN | Handles main navigation. Short press changes screen, long restarts capture  |
