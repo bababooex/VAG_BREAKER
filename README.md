@@ -1,4 +1,4 @@
-# **VAG_BREAKER**
+# **VAG_BREAKER - arduino VW keyfob tool**
 Experimental rewrite of already existing rolling code implementation on flipper zero. Developed as helpful tool to analyse and research rolling codes with cheap device like arduino, avoiding high cost of Flipperzero / HackRF, intended for educational and security purposes only. It doesnt allow user to transmit by default, this can be enabled in example code directly, preventing accidental desync or misuse right away. This was made to warn and teach about security vulnerabilities in my home country, where most popular car brand is Skoda!
 
 ---
