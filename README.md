@@ -59,7 +59,6 @@ This table explains their purpose, last three are just for that keyfob pressing 
 
 ## **Images**
 
-| | |
 |:---:|:---:|
 | ![capture](images/capture_mode.jpg) | ![decode](images/decoded!.jpg) |
 | Device in capture mode, rssi is broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
