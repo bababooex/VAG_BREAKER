@@ -335,7 +335,7 @@ void pass_to_decoder(bool level, uint32_t dur){
                                         lcd.setCursor(0, 0);
                                         lcd.print(vag_vehicle_name(sig->type_byte));
                                         lcd.print(" Btn:");
-                                        lcd.print("Lock");
+                                        lcd.print("Lock  ");
                                         lcd.setCursor(4, 1);
                                         print_hex_24(lcd, local_cnt);
                                         if (corr){
@@ -377,7 +377,7 @@ void pass_to_decoder(bool level, uint32_t dur){
                                         lcd.setCursor(0, 0);
                                         lcd.print(vag_vehicle_name(sig->type_byte));
                                         lcd.print(" Btn:");
-                                        lcd.print("Boot");
+                                        lcd.print("Boot  ");
                                         lcd.setCursor(4, 1);
                                         print_hex_24(lcd, local_cnt);
                                         if (corr){
