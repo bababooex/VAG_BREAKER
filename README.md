@@ -44,7 +44,8 @@ Default example uses 4 buttons
 This table explains their purpose, last three are just for that keyfob pressing feel:
 | Button name | Purpose and usage |
 |---|---|
-| RST_BTN | Handles main navigation. If you capture correct data, you either switch 3 screens with short presses or one long press restarts capture  |
+| RST_BTN | Handles main navigation. If you capture correct data, 
+  you either switch 3 screens with short presses or one long press restarts capture  |
 | LOCK_BTN | Encodes lock button with next rolling code and counter |
 | UNLOCK_BTN | Encodes unlock button with next rolling code and counter |
 | TRUNK_BTN | Encodes boot button with next rolling code and counter |
