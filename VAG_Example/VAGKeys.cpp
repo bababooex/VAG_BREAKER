@@ -141,7 +141,6 @@ static uint8_t encrypt_compress(const Aut64Key* key, const uint8_t state[8],
     return (rh << 4) | rl;
 }
 
-//sbox substitution
 static uint8_t substitute(const Aut64Key* key, uint8_t byte_val) {
     return (key->sbox[byte_val >> 4] << 4) | key->sbox[byte_val & 0x0F];
 }
