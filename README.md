@@ -58,6 +58,7 @@ This table explains their purpose, last three are just for that keyfob pressing 
 | UNLOCK_BTN | Encodes unlock button with next rolling code and counter |
 | TRUNK_BTN | Encodes boot button with next rolling code and counter |
 
+Encoding will lock main screen on place and visually update counter and pressed button, this also adds + 1 to local counter each time and button for retransmission (if enabled).
 ## **Images**
 |     |     |
 |:---:|:---:|
