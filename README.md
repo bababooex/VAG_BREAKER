@@ -44,7 +44,7 @@ This table explains different data:
 |---|---|
 | Main screen | Decoded type name, button, counter and key used to decrypt, if vag type detected is 2, it shows X - no AUT64 keys used |
 | Advanced screen 1 | Serial number, dispatch byte and type byte, these are more advanced data derived from what is shown on last screen |
-| Advanced screen 2 | Full key1 and key2 data directly, for full debug via LCD |
+| Advanced screen 2 | Full key1 and key2 data directly, for complete debug via LCD |
 
 ### Navigation
 Default example uses 4 buttons.
