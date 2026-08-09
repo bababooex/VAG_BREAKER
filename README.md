@@ -1,6 +1,9 @@
 # **VAG_BREAKER**
 Experimental rewrite of already existing rolling code implementation on flipper zero. Developed as helpful tool to analyse and research rolling codes with cheap device like arduino, avoiding high cost of Flipperzero / HackRF, intended for educational and security purposes only. It doesnt allow user to transmit by default, this can be enabled in example code directly, preventing accidental desync or misuse right away. This was made to warn and teach about security vulnerabilities in my home country, where most popular car brand is Skoda!
 
+> [!WARNING]
+> Although the name sounds ilegally, it means breaking rolling code, not into someones car. Test this only on systems and vehicles you own or have explicit, written permission to test. Capturing, decoding, or transmitting keyfob and vehicle-access signals without authorization may be illegal in your jurisdiction (e.g. computer misuse, unauthorized access, or radio regulations). You are solely responsible for ensuring your use complies with all applicable laws. The authors and contributors assume no liability for misuse or damage arising from use of this software.
+
 ## **Supported VAG variants**
 | Type | Decoder | Encoder | Crypto used | Car examples  |
 | :---:| :---:   | :---:   |    :---:    |     :---:     | 
