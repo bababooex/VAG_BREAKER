@@ -6,7 +6,7 @@ Experimental rewrite of already existing rolling code implementation on flipper 
 
 ## **Supported VAG variants**
 | Type | Decoder | Encoder | Crypto used | Car examples  |
-| :---:| :---:   | :---:   |    :---:    |     :---:     | 
+|:---: |  :---:  |  :---:  |    :---:    |     :---:     | 
 |  1   |   ✅    |   ❌   | AUT64       | VW Passat     | 
 |  2   |   ✅    |   ✅   | XTEA        | Skoda rapid   |
 |  3   |   ✅    |   ✅   | AUT64       | Audi          |
