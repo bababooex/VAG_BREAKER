@@ -3,6 +3,16 @@
 #include "VAGDecoder.h"
 #include "VAGKeys.h"
 #include <LiquidCrystal.h>
+
+/*
+ *  Example code for full keyfob decoder/encoder. It is not perfect and has some issues, mainly with vag types 1/2 rx sensitivity, probably because of shorter pulse times than older 3/4 variants.
+ *
+ *  tested on arduino nano clone with cc1101 v2 blue board
+ *  Created on: 9. 8. 2026
+ *  Author: Adam Fucik
+ *  
+ */
+
 //this enables tx, only do this if you understand what are you doing!
 //#define TX_ENABLED
 
