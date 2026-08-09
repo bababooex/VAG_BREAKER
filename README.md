@@ -9,7 +9,8 @@ Experimental rewrite of already existing rolling code implementation on flipper 
 |  3   |   ✅    |   ✅   | AUT64       | Audi          |
 |  4   |   ✅    |   ✅   | AUT64       | Skoda octavia | 
 
-All use same 434.42 MHz. Examples are from my testing, can be wrong. The x only means that it is encoding incorrectly, most Passats decode as type 1 but encode as type 2.
+All use same 434.42 MHz. Examples are from my testing, can be wrong. 
+The x only means that it is encoding incorrectly, most Passats decode as type 1 but encode as type 2.
 ## **How to put everything together?**
 
 ### Required hw for default example
