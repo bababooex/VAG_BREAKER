@@ -76,8 +76,10 @@ uint32_t timer;//measuring presses lenght
 volatile bool cc1101_tx_active = false;
 //mirrors set radio output pin
 #define TX_PIN_BIT  RADIO_OUTPUT_PIN
-//based on comparing audible sound from remote vs this, this is only for correcting tiny error, that would still be in tolerance no problem
-#define US_CORRECTION 5
+//based on comparing audible sound from remote vs this, this is only for correcting tiny error, that would still be in tolerance
+#define US_34_CORRECTION 0
+#define US_12_CORRECTION 7
+uint8_t us_corr=0;
 //trying to be as fast as fucc with direct manipulation
 inline void cc1101_tx_pulse(bool level, uint16_t dur)
 {
@@ -88,7 +90,7 @@ inline void cc1101_tx_pulse(bool level, uint16_t dur)
     else
         PORTD &= ~_BV(TX_PIN_BIT);
 
-    delayMicroseconds(dur-US_CORRECTION);
+    delayMicroseconds(dur-us_corr);
 }
 //encode selected signal with next counter
 void encode_and_tx(const VagDecodedSignal* sig, uint32_t counter, uint8_t button) {
@@ -97,6 +99,13 @@ void encode_and_tx(const VagDecodedSignal* sig, uint32_t counter, uint8_t button
     cc1101.setIdle();
     pinMode(RADIO_OUTPUT_PIN, OUTPUT);
     digitalWrite(RADIO_OUTPUT_PIN, LOW);
+    //apply correction
+    if (sig->vag_type==1 || sig->vag_type==2){
+         us_corr=US_12_CORRECTION;
+    }
+    else{
+        us_corr=US_34_CORRECTION;
+    }
     //tx mode
     cc1101.setTx();
     noInterrupts();
