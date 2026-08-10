@@ -76,9 +76,9 @@ uint32_t timer;//measuring presses lenght
 volatile bool cc1101_tx_active = false;
 //mirrors set radio output pin
 #define TX_PIN_BIT  RADIO_OUTPUT_PIN
-//based on comparing audible sound from remote vs this, this is only for correcting tiny error, that would still be in tolerance
+//apply correction as you like, I will leave this as default 0
 #define US_34_CORRECTION 0
-#define US_12_CORRECTION 7
+#define US_12_CORRECTION 0
 uint8_t us_corr=0;
 //trying to be as fast as fucc with direct manipulation
 inline void cc1101_tx_pulse(bool level, uint16_t dur)
