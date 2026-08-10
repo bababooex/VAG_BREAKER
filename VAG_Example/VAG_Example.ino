@@ -596,7 +596,13 @@ void loop() {
     lcd.setCursor(0, 1);
     //pretty crude, only for visual clue before decode
     lcd.print("RSSI:");
-    lcd.print(cc1101.getRSSI());
+    if (cc1101.getRSSI()<100){
+        lcd.print(cc1101.getRSSI());
+        lcd.print(" ");
+    }
+    else{
+        lcd.print(cc1101.getRSSI());
+    }
     if (packet_ready) {
         #ifdef DEBUG
         Serial.println("PREAMBLE LOCKED - recording data");
