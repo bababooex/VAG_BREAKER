@@ -63,7 +63,7 @@ Encoding will lock main screen on place and visually update counter and pressed 
 |     |     |
 |:---:|:---:|
 | ![capture](images/capture_mode.jpg) | ![decode](images/decoded!.jpg) |
-| Device in capture mode, rssi is a bit broken, but it doesnt change the functionality much | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
+| Device in capture mode, rssi shows no signal, ready to decode! | Decoded data along with FlipperARF decoded code to compare, visible board is from octavia key |
 
 ## **Crypto research**
 This explains more how does underlying logic work
