@@ -76,6 +76,8 @@ uint32_t timer;//measuring presses lenght
 volatile bool cc1101_tx_active = false;
 //mirrors set radio output pin
 #define TX_PIN_BIT  RADIO_OUTPUT_PIN
+//based on comparing audible sound from remote vs this, this is only for correcting tiny error, that would still be in tolerance no problem
+#define US_CORRECTION 5
 //trying to be as fast as fucc with direct manipulation
 inline void cc1101_tx_pulse(bool level, uint16_t dur)
 {
@@ -86,7 +88,7 @@ inline void cc1101_tx_pulse(bool level, uint16_t dur)
     else
         PORTD &= ~_BV(TX_PIN_BIT);
 
-    delayMicroseconds(dur);
+    delayMicroseconds(dur-US_CORRECTION);
 }
 //encode selected signal with next counter
 void encode_and_tx(const VagDecodedSignal* sig, uint32_t counter, uint8_t button) {
@@ -460,6 +462,7 @@ void setup() {
     //configure cc1101 for raw
     //raw gdo0 capture
     //experimented cc1101 register config, taken from various flipper configs
+    /*
     cc1101.spiWriteReg(CC1101_IOCFG0,   0x0D); // 02 0D
     cc1101.spiWriteReg(CC1101_FSCTRL1,  0x06); // 0B 06
     cc1101.spiWriteReg(CC1101_PKTCTRL0, 0x32); // 08 32
@@ -478,6 +481,30 @@ void setup() {
     cc1101.spiWriteReg(CC1101_WORCTRL,  0xFB); // 20 FB
     cc1101.spiWriteReg(CC1101_FREND0,   0x11); // 22 11
     cc1101.spiWriteReg(CC1101_FREND1,   0x55); // 21 55
+    */
+    cc1101.spiWriteReg(CC1101_IOCFG0,   0x0D);
+    cc1101.spiWriteReg(CC1101_FSCTRL1,  0x06);
+    cc1101.spiWriteReg(CC1101_PKTCTRL1, 0x04);
+    cc1101.spiWriteReg(CC1101_PKTCTRL0, 0x32);
+
+    cc1101.spiWriteReg(CC1101_MDMCFG4, 0xC7);
+    cc1101.spiWriteReg(CC1101_MDMCFG3, 0x93);
+    cc1101.spiWriteReg(CC1101_MDMCFG2,  0x30);
+    cc1101.spiWriteReg(CC1101_MDMCFG1, 0x00);
+    cc1101.spiWriteReg(CC1101_MDMCFG0, 0x00);
+    cc1101.spiWriteReg(CC1101_DEVIATN, 0x00);
+
+    cc1101.spiWriteReg(CC1101_MCSM1,   0x0C);
+    cc1101.spiWriteReg(CC1101_MCSM0,   0x18);
+    cc1101.spiWriteReg(CC1101_FOCCFG,  0x16);
+
+    cc1101.spiWriteReg(CC1101_AGCCTRL2, 0x07);
+    cc1101.spiWriteReg(CC1101_AGCCTRL1, 0x00);
+    cc1101.spiWriteReg(CC1101_AGCCTRL0, 0xB1);
+
+    cc1101.spiWriteReg(CC1101_WORCTRL,  0xFB);
+    cc1101.spiWriteReg(CC1101_FREND1,   0xB6);
+    cc1101.spiWriteReg(CC1101_FREND0,   0x11);
     cc1101.setTXPwr(TX_PLUS_10_DBM);//set to 10mW+ max (C0)
     cc1101.setMHZ(434.42);//set vag frequency  
     cc1101.setRx();//rx mode
