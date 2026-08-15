@@ -40,7 +40,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 #define TRUNK_BTN 4
 #define UNLOCK_BTN 7
 //const for packet precorrector and detector
-#define PULSE_BUFFER_SIZE 365 //total max for data, ok for ram
+#define PULSE_BUFFER_SIZE 360 //total max for data, ok for ram
 #define TYPE_1_2_VAL 300 //const
 #define TYPE_3_4_VAL 500 //const
 #define TOLERANCE 70 //change as you like, recommend 50 to 100 values, but experiment
@@ -160,7 +160,7 @@ void radioHandlerOnChange() {
         if (is_type12 || is_type34) {
             preamble_count++;
             //rough approx. for when to start capture
-            uint16_t capture_start = is_type12 ? 250 : 70;
+            uint16_t capture_start = is_type12 ? 240 : 70;
             
             if (preamble_count >= capture_start) {
                 capturing = true;
