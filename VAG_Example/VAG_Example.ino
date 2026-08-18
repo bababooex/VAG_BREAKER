@@ -471,49 +471,25 @@ void setup() {
     //configure cc1101 for raw
     //raw gdo0 capture
     //experimented cc1101 register config, taken from various flipper configs
-    /*
-    cc1101.spiWriteReg(CC1101_IOCFG0,   0x0D); // 02 0D
-    cc1101.spiWriteReg(CC1101_FSCTRL1,  0x06); // 0B 06
-    cc1101.spiWriteReg(CC1101_PKTCTRL0, 0x32); // 08 32
-    cc1101.spiWriteReg(CC1101_PKTCTRL1, 0x04); // 07 04
-    cc1101.spiWriteReg(CC1101_MDMCFG0,  0x00); // 14 00
-    cc1101.spiWriteReg(CC1101_MDMCFG1,  0x00); // 13 00
-    cc1101.spiWriteReg(CC1101_MDMCFG2,  0x30); // 12 30
-    cc1101.spiWriteReg(CC1101_MDMCFG3,  0xF8); // 11 F8
-    cc1101.spiWriteReg(CC1101_MDMCFG4,  0xC9); // 10 C9
-    cc1101.spiWriteReg(CC1101_DEVIATN,  0x14); // 15 14
-    cc1101.spiWriteReg(CC1101_MCSM0,    0x18); // 18 18
-    cc1101.spiWriteReg(CC1101_FOCCFG,   0x16); // 19 16
-    cc1101.spiWriteReg(CC1101_AGCCTRL0, 0x91); // 1D 91
-    cc1101.spiWriteReg(CC1101_AGCCTRL1, 0x00); // 1C 00
-    cc1101.spiWriteReg(CC1101_AGCCTRL2, 0x07); // 1B 07
-    cc1101.spiWriteReg(CC1101_WORCTRL,  0xFB); // 20 FB
-    cc1101.spiWriteReg(CC1101_FREND0,   0x11); // 22 11
-    cc1101.spiWriteReg(CC1101_FREND1,   0x55); // 21 55
-    */
-    cc1101.spiWriteReg(CC1101_IOCFG0,   0x0D);
-    cc1101.spiWriteReg(CC1101_FSCTRL1,  0x06);
-    cc1101.spiWriteReg(CC1101_PKTCTRL1, 0x04);
-    cc1101.spiWriteReg(CC1101_PKTCTRL0, 0x32);
-
-    cc1101.spiWriteReg(CC1101_MDMCFG4, 0xC7);
-    cc1101.spiWriteReg(CC1101_MDMCFG3, 0x93);
-    cc1101.spiWriteReg(CC1101_MDMCFG2,  0x30);
-    cc1101.spiWriteReg(CC1101_MDMCFG1, 0x00);
-    cc1101.spiWriteReg(CC1101_MDMCFG0, 0x00);
-    cc1101.spiWriteReg(CC1101_DEVIATN, 0x00);
-
-    cc1101.spiWriteReg(CC1101_MCSM1,   0x0C);
-    cc1101.spiWriteReg(CC1101_MCSM0,   0x18);
-    cc1101.spiWriteReg(CC1101_FOCCFG,  0x16);
-
-    cc1101.spiWriteReg(CC1101_AGCCTRL2, 0x07);
-    cc1101.spiWriteReg(CC1101_AGCCTRL1, 0x00);
-    cc1101.spiWriteReg(CC1101_AGCCTRL0, 0xB1);
-
-    cc1101.spiWriteReg(CC1101_WORCTRL,  0xFB);
-    cc1101.spiWriteReg(CC1101_FREND1,   0xB6);
-    cc1101.spiWriteReg(CC1101_FREND0,   0x11);
+    //more sensitive, approx 4.8 kbaud with 200 khz bandwidth 
+    cc1101.spiWriteReg(CC1101_IOCFG0,    0x0D);
+    cc1101.spiWriteReg(CC1101_FSCTRL1,   0x06);
+    cc1101.spiWriteReg(CC1101_PKTCTRL1,  0x00);
+    cc1101.spiWriteReg(CC1101_PKTCTRL0,  0x32);
+    cc1101.spiWriteReg(CC1101_MDMCFG4,   0x87);
+    cc1101.spiWriteReg(CC1101_MDMCFG3,   0xA3);
+    cc1101.spiWriteReg(CC1101_MDMCFG2,   0x30);
+    cc1101.spiWriteReg(CC1101_MDMCFG1,   0x00);
+    cc1101.spiWriteReg(CC1101_MDMCFG0,   0x00);
+    cc1101.spiWriteReg(CC1101_DEVIATN,   0x00);
+    cc1101.spiWriteReg(CC1101_MCSM1,     0x00);
+    cc1101.spiWriteReg(CC1101_MCSM0,     0x18);
+    cc1101.spiWriteReg(CC1101_FOCCFG,    0x00);
+    cc1101.spiWriteReg(CC1101_AGCCTRL2,  0x06);
+    cc1101.spiWriteReg(CC1101_AGCCTRL1,  0x00);
+    cc1101.spiWriteReg(CC1101_AGCCTRL0,  0x92);
+    cc1101.spiWriteReg(CC1101_FREND1,    0xB6);
+    cc1101.spiWriteReg(CC1101_FREND0,    0x11);
     cc1101.setTXPwr(TX_PLUS_10_DBM);//set to 10mW+ max (C0)
     cc1101.setMHZ(434.42);//set vag frequency  
     cc1101.setRx();//rx mode
