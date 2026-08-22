@@ -5,7 +5,7 @@
 #include <LiquidCrystal.h>
 
 /*
- *  Example code for full keyfob decoder/encoder. It is not perfect and has some issues, mainly with vag types 1/2 rx sensitivity, probably because of shorter pulse times than older 3/4 variants.
+ *  Example code for full keyfob decoder/encoder. Some users from FlipperARF discord reported encode doesnt work for old Aud (type 3/4) and Passat B6 (type 2), unforunatelly this will probably have same issue since it is build on it.
  *
  *  tested on arduino nano clone with cc1101 v2 blue board
  *  Created on: 9. 8. 2026
