@@ -3,7 +3,7 @@ Experimental rewrite of already existing rolling code implementation on flipper 
 
 ---
 > [!WARNING]
-> Although the name sounds ilegally, it means breaking rolling code, not into someones car. Also I have not tested encode on real car, but it is being decoded with flipper zero correctly with counter + 1. Test this only on systems and vehicles you own or have explicit, written permission to test. Capturing, decoding, or transmitting keyfob and vehicle-access signals without authorization may be illegal in your jurisdiction (e.g. computer misuse, unauthorized access, or radio regulations). You are solely responsible for ensuring your use complies with all applicable laws. The authors and contributors assume no liability for misuse or damage arising from use of this software.
+> Although the name sounds illegally, it means breaking rolling code, not into someones car. Also I have not tested encode on real car, but it is being decoded with flipper zero correctly with counter + 1. Test this only on systems and vehicles you own or have explicit, written permission to test. Capturing, decoding, or transmitting keyfob and vehicle-access signals without authorization may be illegal in your jurisdiction (e.g. computer misuse, unauthorized access, or radio regulations). You are solely responsible for ensuring your use complies with all applicable laws. The authors and contributors assume no liability for misuse or damage arising from use of this software.
 ---
 
 ## **Supported VAG variants**
