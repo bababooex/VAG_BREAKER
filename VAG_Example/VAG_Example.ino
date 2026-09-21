@@ -468,26 +468,23 @@ void setup() {
     lcd.clear();//clean all, checks ok
     lcd.setCursor(0, 0);
     lcd.print("CONFIG. CC1101!");
-    //configure cc1101 for raw
-    //raw gdo0 capture
-    //experimented cc1101 register config, taken from various flipper configs
-    //more sensitive, approx 4.8 kbaud with 200 khz bandwidth 
+    //configure cc1101 for raw gdo0 capture
+    //VAG (VW/Audi/Skoda/SEAT): OOK, ~2 kBaud, 434.4 MHz band. BW ~135 kHz. Protocol specific, thx to @d4rks1d33
     cc1101.spiWriteReg(CC1101_IOCFG0,    0x0D);
+    cc1101.spiWriteReg(CC1101_FIFOTHR,   0x47);
+    cc1101.spiWriteReg(CC1101_PKTCTRL0,  0x32); 
     cc1101.spiWriteReg(CC1101_FSCTRL1,   0x06);
-    cc1101.spiWriteReg(CC1101_PKTCTRL1,  0x00);
-    cc1101.spiWriteReg(CC1101_PKTCTRL0,  0x32);
-    cc1101.spiWriteReg(CC1101_MDMCFG4,   0x87);
-    cc1101.spiWriteReg(CC1101_MDMCFG3,   0xA3);
-    cc1101.spiWriteReg(CC1101_MDMCFG2,   0x30);
+    cc1101.spiWriteReg(CC1101_MDMCFG4,   0xA7);
+    cc1101.spiWriteReg(CC1101_MDMCFG3,   0x32);  
+    cc1101.spiWriteReg(CC1101_MDMCFG2,   0x30);   
     cc1101.spiWriteReg(CC1101_MDMCFG1,   0x00);
     cc1101.spiWriteReg(CC1101_MDMCFG0,   0x00);
-    cc1101.spiWriteReg(CC1101_DEVIATN,   0x00);
-    cc1101.spiWriteReg(CC1101_MCSM1,     0x00);
     cc1101.spiWriteReg(CC1101_MCSM0,     0x18);
-    cc1101.spiWriteReg(CC1101_FOCCFG,    0x00);
-    cc1101.spiWriteReg(CC1101_AGCCTRL2,  0x06);
+    cc1101.spiWriteReg(CC1101_FOCCFG,    0x18);
+    cc1101.spiWriteReg(CC1101_AGCCTRL2,  0x03);
     cc1101.spiWriteReg(CC1101_AGCCTRL1,  0x00);
-    cc1101.spiWriteReg(CC1101_AGCCTRL0,  0x92);
+    cc1101.spiWriteReg(CC1101_AGCCTRL0,  0x91);
+    cc1101.spiWriteReg(CC1101_WORCTRL,   0xFB);
     cc1101.spiWriteReg(CC1101_FREND1,    0xB6);
     cc1101.spiWriteReg(CC1101_FREND0,    0x11);
     cc1101.setTXPwr(TX_PLUS_10_DBM);//set to 10mW+ max (C0)
