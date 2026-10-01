@@ -7,7 +7,7 @@
 /*
  *  Example code for full keyfob decoder/encoder with basic 16x2 LCD and 4 buttons
  *  Some users from FlipperARF discord reported encode doesnt work for old Audi (type 3/4) and Passat B6 (type 2), unforunately this will probably have same issue since it is build on it.
- *
+ *  If you want to make this portable, you can power arduino nano 5V pin with 3V3 from regulator. Also enable square wave generator for charge pump to make LCD displayin visible. 
  *  tested on arduino nano clone with cc1101 v2 blue board
  *  Created on: 9. 8. 2026
  *  Author: Adam Fucik
@@ -19,6 +19,9 @@
 
 //debug data to console
 //#define DEBUG
+
+//This enables square wave on pin 9 for 3V3 operation of LCD display if needed. Runs autonomously.
+//#define 3V3_LCD
 
 //spi pins matching arduino nano
 const int SPI_SCK = 13;
@@ -445,12 +448,27 @@ void pass_to_decoder(bool level, uint32_t dur){
                 }
         }
 }
-
+//square wave via timer for charge pump
+void config_cp(){
+  CLKPR = 0x80; 
+  CLKPR = 0x00;
+  pinMode(9, OUTPUT);
+  TCCR1A = 0;
+  TCCR1B = 0;
+  TCNT1  = 0;
+  TCCR1A = _BV(COM1A1) | _BV(WGM11);
+  TCCR1B = _BV(WGM13) | _BV(WGM12) | _BV(CS10); 
+  ICR1 = 159;
+  OCR1A = 79;
+}
 //set regs and start capture
 void setup() {
     #ifdef DEBUG
     Serial.begin(9600);
-    delay(1200);
+    delay(1200);//better safe than sorry, this was issue on raspberry pi arduino pico
+    #endif
+    #ifdef 3V3_LCD
+    config_cp();
     #endif
     lcd.begin(16, 2);//init lcd
     vag_keys_init();//load vag keys
