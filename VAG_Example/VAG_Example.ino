@@ -548,7 +548,7 @@ void feed_preamble_type34() {
         level = !level;
     }
 }
-//data preprocessor and handler, 
+//data preprocessor and handler, gaps are longer for reason (activates decode correctly)
 void process_data() {
     if (detected_type12) {
         uint16_t gap_idx = 0;
