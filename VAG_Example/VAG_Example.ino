@@ -448,8 +448,10 @@ void pass_to_decoder(bool level, uint32_t dur){
 
 //set regs and start capture
 void setup() {
+    #ifdef DEBUG
     Serial.begin(9600);
     delay(1200);
+    #endif
     lcd.begin(16, 2);//init lcd
     vag_keys_init();//load vag keys
     vag_init(&dec);//init decoder as dec
